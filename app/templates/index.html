@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron mt-4">
+    <h1 class="display-4">Welcome to the Python To-Do App!</h1>
+    <p class="lead">Manage your tasks efficiently and stay organized.</p>
+    <hr class="my-4">
+    {% if not current_user.is_authenticated %}
+        <a class="btn btn-primary btn-lg" href="{{ url_for('register') }}" role="button">Get Started</a>
+    {% else %}
+        <a class="btn btn-primary btn-lg" href="{{ url_for('dashboard') }}" role="button">Go to Dashboard</a>
+    {% endif %}
+</div>
+{% endblock %}
